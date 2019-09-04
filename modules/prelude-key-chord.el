@@ -42,6 +42,7 @@
 (key-chord-define-global "uu" 'undo-tree-visualize)
 (key-chord-define-global "xx" 'execute-extended-command)
 (key-chord-define-global "yy" 'browse-kill-ring)
+(key-chord-define-global "kk" 'kill-buffer)
 
 (defvar key-chord-tips '("Press <jj> quickly to jump to the beginning of a visible word."
                          "Press <jl> quickly to jump to a visible line."
@@ -49,7 +50,8 @@
                          "Press <JJ> quickly to switch to previous buffer."
                          "Press <uu> quickly to visualize the undo tree."
                          "Press <xx> quickly to execute extended command."
-                         "Press <yy> quickly to browse the kill ring."))
+                         "Press <yy> quickly to browse the kill ring."
+                         "Press <kk> quickly to kill buffer."))
 
 (setq prelude-tips (append prelude-tips key-chord-tips))
 
