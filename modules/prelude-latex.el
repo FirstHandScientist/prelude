@@ -75,7 +75,7 @@
 
 (defun prelude-latex-mode-defaults ()
   "Default Prelude hook for `LaTeX-mode'."
-  (turn-on-auto-fill)
+  (turn-off-auto-fill)
   (abbrev-mode +1)
   (smartparens-mode +1)
   (case prelude-latex-fast-math-entry
