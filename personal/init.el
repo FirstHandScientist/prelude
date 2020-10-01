@@ -96,7 +96,7 @@
 (add-hook 'ibuffer-mode-hook
               (lambda ()
                 (ibuffer-switch-to-saved-filter-groups "default")))
-
+(setq dired-listing-switches "-alh")
 
 ;; set the global font setting
 (set-face-attribute 'default nil :height 180)
@@ -104,4 +104,6 @@
 ;; key-chord setting
 (key-chord-define-global "jk" nil)
 
+;; set default python interpreter
+(setq python-shell-interpreter "python3")
 
