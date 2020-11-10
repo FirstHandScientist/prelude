@@ -107,3 +107,12 @@
 ;; set default python interpreter
 (setq python-shell-interpreter "python3")
 
+;; (global-set-key "\C-h" 'delete-backward-char)
+
+;; ;; overrides mark-whole-buffer
+;; (global-set-key "\C-xh" 'help-command)
+
+;; Translate C-h to DEL
+(keyboard-translate ?\C-h ?\C-?)
+;; Define M-h to help  ---  please don't add an extra ' after help!
+(global-set-key "\C-xh" 'help-command)
