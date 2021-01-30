@@ -53,6 +53,19 @@
 
 (add-hook 'org-mode-hook (lambda () (run-hooks 'prelude-org-mode-hook)))
 
+
 (provide 'prelude-org)
 
+
+;;; org-gcal setting
+(require 'org-gcal)
+(setq org-gcal-client-id "315851732858-4dhv6h0lbg4tus9348l7htpg2mchltpi.apps.googleusercontent.com"
+      org-gcal-client-secret "i3_lkSxka2mIH8Y6d04307b2"
+      org-gcal-file-alist '(("dong2015liu@gmail.com" .  "~/org/org-gcal-schedule.org")
+                            ))
+
+
 ;;; prelude-org.el ends here
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+(setq org-default-notes-file "~/org/notes/tasks.org")
+(global-set-key (kbd "C-c c") 'org-capture)

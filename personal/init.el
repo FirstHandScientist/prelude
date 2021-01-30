@@ -23,9 +23,9 @@
 (setq TeX-PDF-mode t)
 
 (setq TeX-output-view-style
-    (quote
-     (("^pdf$" "." "evince -f %o")
-      ("^html?$" "." "iceweasel %o"))))
+      (quote
+       (("^pdf$" "." "evince -f %o")
+        ("^html?$" "." "iceweasel %o"))))
 
 ;; Setting up writegood-mode
 (require 'writegood-mode)
@@ -62,7 +62,7 @@
 ;; (setq user-mail-address "doli@kth.se"
 ;;        user-full-name "Dong")
 ;; (setq send-mail-function    'smtpmail-send-it
- ;;         smtpmail-smtp-server  "smtp.kth.se"
+;;         smtpmail-smtp-server  "smtp.kth.se"
 ;;          smtpmail-stream-type  'starttls
 ;;          smtpmail-smtp-service 587)
 
@@ -83,19 +83,19 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 (setq ibuffer-saved-filter-groups
-          (quote (("default"
-                   ("dired" (mode . dired-mode))
-                   ("tex" (mode . latex-mode))
-                   ("org" (mode . org-mode))
-                   ("code" (or
-                            (mode . matlab-mode)
-                            (mode . python-mode)
-                            (mode . mail-mode)
-                            (name . "^\\.sh$")
-                            (name . "^\\.newsrc-dribble")))))))
+      (quote (("default"
+               ("dired" (mode . dired-mode))
+               ("tex" (mode . latex-mode))
+               ("org" (mode . org-mode))
+               ("code" (or
+                        (mode . matlab-mode)
+                        (mode . python-mode)
+                        (mode . mail-mode)
+                        (name . "^\\.sh$")
+                        (name . "^\\.newsrc-dribble")))))))
 (add-hook 'ibuffer-mode-hook
-              (lambda ()
-                (ibuffer-switch-to-saved-filter-groups "default")))
+          (lambda ()
+            (ibuffer-switch-to-saved-filter-groups "default")))
 (setq dired-listing-switches "-alh")
 
 ;; set the global font setting
@@ -113,6 +113,13 @@
 ;; (global-set-key "\C-xh" 'help-command)
 
 ;; Translate C-h to DEL
-(keyboard-translate ?\C-h ?\C-?)
+(define-key key-translation-map [?\C-h] [?\C-?])
 ;; Define M-h to help  ---  please don't add an extra ' after help!
-(global-set-key "\C-xh" 'help-command)
+(global-set-key "\C-ch" 'help-command)
+(normal-erase-is-backspace-mode 1)
+
+;; Chinese Input Method pyim
+(require 'pyim)
+(require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
+(pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
+;; (setq default-input-method "pyim")
